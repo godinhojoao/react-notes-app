@@ -1,0 +1,15 @@
+
+input, textarea {
+  outline: none;
+}
+
+.default-input {
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  padding: px-to-rem(4) px-to-rem(6);
+
+  &:hover {
+    border-color: #b8b8b8;
+    background-color: #ececec;
+  }
+}

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './styles/utilities';
+@import './styles/resets';
+@import './styles/defaults';
+
+html,
+body {
+  font-size: 16px;
+  height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+#root {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  display: grid;
+  grid-gap: px-to-rem(30);
+  grid-template-columns: .5fr 1fr;
+  margin: px-to-rem(0) px-to-rem(90);
+  margin-top: px-to-rem(30);
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (max-width: 370px) {
+    margin: px-to-rem(0) px-to-rem(75);
+    margin-top: px-to-rem(30);
+  }
+}
+
+.list {
+  display: grid;
+  grid-gap: px-to-rem(10);
+  grid-template-columns: 1fr 1fr;
+
+  @media only screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}

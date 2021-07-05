@@ -1,0 +1,18 @@
+@import './../../styles/utilities';
+
+.create-new-card form {
+  display: grid;
+  grid-gap: px-to-rem(8);
+
+  input {
+    height: px-to-rem(25);
+  }
+
+  input.textarea {
+    height: px-to-rem(50);
+  }
+
+  textarea {
+    height: px-to-rem(50);
+  }
+}
