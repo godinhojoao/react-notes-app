@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { List } from './components/List/List';
-import { AddCard } from './components/AddCard/AddCard';
-
-import './main.scss';
-
-export default function App() {
+function useCard() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -30,19 +25,7 @@ export default function App() {
     localStorage.setItem('cards', JSON.stringify([...updatedCards]));
   }
 
-  return (
-    <>
-      <div className="main-container">
-        <AddCard onCreate={createCard} />
-
-        <div className="list">
-          {
-            cards.map(card => {
-              return (<List card={card} key={card.id} onDelete={deleteCard} />);
-            })
-          }
-        </div>
-      </div >
-    </>
-  );
+  return { cards, setCards, createCard, deleteCard };
 }
+
+export { useCard }

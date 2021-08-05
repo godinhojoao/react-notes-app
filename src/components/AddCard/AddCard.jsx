@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
+import { Context } from './../../context/CardContext';
 import { Button } from './../Button/Button';
 
 import './AddCard.scss';
 
-function AddCard({ onCreate }) {
+function AddCard() {
+  const { createCard } = useContext(Context);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -20,7 +22,7 @@ function AddCard({ onCreate }) {
     e.preventDefault();
     if (title.length > 0 && description.length > 0) {
       const newTask = { title, description };
-      onCreate(newTask);
+      createCard(newTask);
       setTitle('');
       setDescription('');
     }
@@ -34,19 +36,21 @@ function AddCard({ onCreate }) {
           className="default-input"
           placeholder="Título"
           value={title}
-          onChange={handleChangeTitle} />
+          onChange={handleChangeTitle}
+        />
 
         <input
           type="text"
           className="default-input textarea"
           placeholder="Descrição"
           value={description}
-          onChange={handleChangeDescription} />
+          onChange={handleChangeDescription}
+        />
 
         <Button onClick={handleSubmitData} label="Adicionar Card" />
       </form>
     </div>
   );
-};
+}
 
-export { AddCard };
+export { AddCard }
