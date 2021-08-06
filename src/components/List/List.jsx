@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { Context } from './../../context/CardContext';
+import { useListCards } from './../../hooks/useListCards';
 import { Button } from './../Button/Button';
 
 import './List.scss';
 
 function List() {
-  const { cards, deleteCard } = useContext(Context);
+  const { cards, deleteCard } = useListCards();
 
   return (
     <>

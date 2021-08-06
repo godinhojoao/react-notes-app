@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
-import { Context } from './../../context/CardContext';
+import { useAddCards } from './../../hooks/useAddCards';
 import { Button } from './../Button/Button';
 
 import './AddCard.scss';
 
 function AddCard() {
-  const { createCard } = useContext(Context);
+  const createCard = useAddCards();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
