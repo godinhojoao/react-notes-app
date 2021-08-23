@@ -1,3 +1,6 @@
+# Imagem de como o site funciona:
+ <img src="./public/images/funcionando.gif">
+
 # Para rodar o projeto siga os seguintes passos:
 
 1 - Rode os seguintes comandos dentro da pasta do projeto:
